@@ -9,7 +9,20 @@ import {
   yellowImg,
 } from "../utils";
 
-export const navLists = ["Store", "Mac", "iPhone", "Support"];
+export const navLists = [
+  { name: "Mac", url: "https://www.apple.com/id/mac/" },
+  { name: "iPad", url: "https://www.apple.com/id/ipad/" },
+  { name: "iPhone", url: "https://www.apple.com/id/iphone/" },
+  { name: "Watch", url: "https://www.apple.com/id/watch/" },
+  { name: "AirPods", url: "https://www.apple.com/id/airpods/" },
+  { name: "Tv & Rumah", url: "https://www.apple.com/id/tv-home/" },
+  { name: "Hiburan", url: "https://www.apple.com/id/services/" },
+  {
+    name: "Dukungan",
+    url: "https://support.apple.com/id-id?cid=gn-ols-home-hp-tab",
+  },
+  { name: "Tempat Membeli", url: "https://www.apple.com/id/buy/" },
+];
 
 export const hightlightsSlides = [
   {
