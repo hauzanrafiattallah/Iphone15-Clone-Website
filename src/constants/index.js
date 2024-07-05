@@ -28,32 +28,38 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Enter A17 Pro.",
-      "Game‑changing chip.",
-      "Groundbreaking performance.",
+      "A17 Pro telah hadir.",
+      "Chip yang mengubah.",
+      "segalanya. Terobosan",
+      "dalam performa.",
     ],
     video: highlightFirstVideo,
     videoDuration: 4,
   },
   {
     id: 2,
-    textLists: ["Titanium.", "So strong. So light. So Pro."],
+    textLists: ["Titanium.", "Begitu ringan. Begitu ringan.", "Begitu Pro."],
     video: highlightSecondVideo,
     videoDuration: 5,
   },
   {
     id: 3,
     textLists: [
-      "iPhone 15 Pro Max has the",
-      "longest optical zoom in",
-      "iPhone ever. Far out.",
+      "iPhone 15 Pro Max memiliki",
+      "zoom optik terpanjang yang",
+      "pernah ada di iPhone",
+      "Jauh bedanya.",
     ],
     video: highlightThirdVideo,
     videoDuration: 2,
   },
   {
     id: 4,
-    textLists: ["All-new Action button.", "What will yours do?."],
+    textLists: [
+      "Tombol Tindakan",
+      "yang sepenuhnya baru",
+      "Apa perintah anda?",
+    ],
     video: highlightFourthVideo,
     videoDuration: 3.63,
   },
@@ -92,9 +98,9 @@ export const sizes = [
 ];
 
 export const footerLinks = [
-  "Privacy Policy",
-  "Terms of Use",
-  "Sales Policy",
+  "Kebijakan Privasi",
+  "Ketentuan Penggunaan",
   "Legal",
-  "Site Map",
+  "Peta Situs",
+  "Indonesia",
 ];

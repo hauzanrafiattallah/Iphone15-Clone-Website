@@ -18,18 +18,22 @@ const Highlights = () => {
       <div className="screen-max-width">
         <div className="mb-12 w-full md:flex items-end justify-between">
           <h1 id="title" className="section-heading">
-            Get the highlights.
+            Lihat sorotan.
           </h1>
 
           <div className="flex flex-wrap items-end gap-5">
-            <p className="link">
-              Watch the film
-              <img src={watchImg} alt="watch" className="ml-2" />
-            </p>
-            <p className="link">
-              Watch the event
-              <img src={rightImg} alt="right" className="ml-2" />
-            </p>
+            <a href="https://www.youtube.com/watch?v=xqyUdNxWazA">
+              <p className="link">
+                Tonton video
+                <img src={watchImg} alt="watch" className="ml-2" />
+              </p>
+            </a>
+            <a href="https://www.apple.com/id/apple-events/">
+              <p className="link">
+                Tonton acara
+                <img src={rightImg} alt="right" className="ml-2" />
+              </p>
+            </a>
           </div>
         </div>
 

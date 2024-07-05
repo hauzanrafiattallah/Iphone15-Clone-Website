@@ -6,13 +6,10 @@ const Footer = () => {
       <div className="screen-max-width">
         <div>
           <p className="font-semibold text-gray text-xs">
-            More ways to shop:{" "}
-            <span className="underline text-blue">Find an Apple Store </span>
-            or <span className="underline text-blue">other retailer</span> near
-            you.
-          </p>
-          <p className="font-semibold text-gray text-xs">
-            Or call 000800-040-1966
+            <a href="https://www.apple.com/id/buy/">
+              <span className="underline text-blue">Temukan retailer </span>
+            </a>
+            <span>di dekat anda</span>
           </p>
         </div>
 
@@ -23,12 +20,16 @@ const Footer = () => {
         md:items-center"
         >
           <p className="font-semibold text-gray text-xs">
-            Copyright @ 2024 Apple Inc. All rights reserved.
+            Hak cipta @ 2024 Apple Inc. Seluruh hak cipta dilindungi
+            undang-undang.
           </p>
           <div className="flex flex-wrap">
             {footerLinks.map((link, i) => {
               return (
-                <p key={link} className="font-semibold text-gray text-xs mb-0 md:mb-0">
+                <p
+                  key={link}
+                  className="font-semibold text-gray text-xs mb-0 md:mb-0"
+                >
                   {link}
                   {i !== footerLinks.length - 1 && (
                     <span className="mx-2">|</span>
