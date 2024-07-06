@@ -98,9 +98,13 @@ export const sizes = [
 ];
 
 export const footerLinks = [
-  "Kebijakan Privasi",
-  "Ketentuan Penggunaan",
-  "Legal",
-  "Peta Situs",
-  "Indonesia",
+  { name: "Kebijakan Privasi", url: "https://www.apple.com/legal/privacy/id/" },
+  {
+    name: "Ketentuan Penggunaan",
+    url: "https://www.apple.com/legal/internet-services/terms/site.html",
+  },
+  { name: "Legal", url: "https://www.apple.com/legal/" },
+  { name: "Peta Situs", url: "https://www.apple.com/id/sitemap/" },
+
+  { name: "Indonesia", url: "https://www.apple.com/choose-country-region/" },
 ];

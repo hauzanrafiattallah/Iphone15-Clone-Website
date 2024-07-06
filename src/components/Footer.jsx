@@ -7,7 +7,9 @@ const Footer = () => {
         <div>
           <p className="font-semibold text-gray text-xs">
             <a href="https://www.apple.com/id/buy/">
-              <span className="underline text-blue">Temukan retailer </span>
+              <span className="hover:underline text-blue">
+                Temukan Retailer{" "}
+              </span>
             </a>
             <span>di dekat anda</span>
           </p>
@@ -24,19 +26,23 @@ const Footer = () => {
             undang-undang.
           </p>
           <div className="flex flex-wrap">
-            {footerLinks.map((link, i) => {
-              return (
-                <p
-                  key={link}
-                  className="font-semibold text-gray text-xs mb-0 md:mb-0"
+            {footerLinks.map((link, i) => (
+              <p
+                key={link.name}
+                className="font-semibold text-gray text-xs mb-0 md:mb-0"
+              >
+                <a
+                  href={link.url}
+                  rel="noopener noreferrer"
+                  className="hover:underline"
                 >
-                  {link}
-                  {i !== footerLinks.length - 1 && (
-                    <span className="mx-2">|</span>
-                  )}
-                </p>
-              );
-            })}
+                  {link.name}
+                </a>
+                {i !== footerLinks.length - 1 && (
+                  <span className="mx-2">|</span>
+                )}
+              </p>
+            ))}
           </div>
         </div>
       </div>
