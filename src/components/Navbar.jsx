@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { appleImg, searchImg } from "../utils";
 import { navLists } from "../constants";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const searchRef = useRef(null);
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      window.location.href = `https://www.apple.com/id/search/${searchQuery}?src=globalnav`;
+    }
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [searchRef]);
 
   return (
     <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
@@ -14,7 +37,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="hidden lg:flex flex-1 justify-center">
+        <div className="hidden xl:flex flex-1 justify-center">
           {navLists.map((nav) => (
             <a
               key={nav.name}
@@ -26,16 +49,37 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-5 lg:gap-7">
-          <img
-            src={searchImg}
-            alt="search"
-            width={17}
-            height={17}
-            className="cursor-pointer"
-          />
+        <div className="flex items-center gap-3 sm:gap-5 xl:gap-7">
           <button
-            className="lg:hidden block focus:outline-none px-1 transform translate-y-[-3px]  text-xl md:text-2xl lg:text-3xl"
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="focus:outline-none"
+          >
+            <img
+              src={searchImg}
+              alt="search"
+              width={17}
+              height={17}
+              className="cursor-pointer"
+            />
+          </button>
+          {isSearchOpen && (
+            <form
+              onSubmit={handleSearchSubmit}
+              className="flex items-center"
+              ref={searchRef}
+            >
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="border-b border-gray-500 bg-transparent text-white outline-none"
+                placeholder="Telusuri apple.com"
+                autoFocus
+              />
+            </form>
+          )}
+          <button
+            className="xl:hidden block focus:outline-none px-1 transform translate-y-[-3px] text-xl md:text-2xl xl:text-3xl"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             ☰
@@ -44,7 +88,7 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col items-center bg-black absolute top-16 left-0 right-0 z-50">
+        <div className="xl:hidden flex flex-col items-center bg-black absolute top-16 left-0 right-0 z-50">
           {navLists.map((nav) => (
             <a
               key={nav.name}
