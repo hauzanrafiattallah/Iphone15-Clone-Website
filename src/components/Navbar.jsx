@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { appleImg, searchImg } from "../utils";
 import { navLists } from "../constants";
-
+// 90 % navbar  
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
