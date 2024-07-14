@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { appleImg, searchImg } from "../utils";
 import { navLists } from "../constants";
-// 90 % navbar  
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -88,17 +88,25 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="xl:hidden flex flex-col items-center bg-black absolute top-16 left-0 right-0 z-50">
-          {navLists.map((nav) => (
-            <a
-              key={nav.name}
-              href={nav.url}
-              className="w-full text-center py-2 border-b border-gray-200 text-gray hover:bg-gray-100"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {nav.name}
-            </a>
-          ))}
+        <div className="fixed inset-0 bg-black flex flex-col items-start p-4 z-50 transition-transform duration-300 ease-in-out">
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            className="text-white text-3xl p-2 mb-4 self-end"
+          >
+            &times; {/* Icon for exit button */}
+          </button>
+          <div className="flex flex-col items-start w-full pl-8 space-y-4">
+            {navLists.map((nav) => (
+              <a
+                key={nav.name}
+                href={nav.url}
+                className="w-full text-left py-3 text-white hover:text-gray-300 transition-colors duration-200 ease-in-out text-xl md:text-2xl lg:text-3xl"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {nav.name}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </header>
