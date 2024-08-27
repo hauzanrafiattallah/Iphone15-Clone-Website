@@ -8,6 +8,7 @@ import { View } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { models, sizes } from "../constants";
 import { animateWithGsapTimeLine } from "../utils/animations";
+
 const Model = () => {
   const [size, setSize] = useState("small");
   const [model, setModel] = useState({

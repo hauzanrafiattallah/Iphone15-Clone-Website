@@ -3,6 +3,7 @@ import { chipImg, frameImg, frameVideo } from "../utils";
 import gsap from "gsap";
 import { useRef } from "react";
 import { animateWithGsap } from "../utils/animations";
+
 const HowItWorks = () => {
   const videoRef = useRef();
 

@@ -19,6 +19,7 @@ const ModelView = ({
   size,
   item,
 }) => {
+  
   return (
     <View
       index={index}
